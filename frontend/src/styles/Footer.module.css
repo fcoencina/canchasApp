@@ -1,0 +1,39 @@
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    background-color: #f6f6f6;
+    justify-content: center;
+    color: black;
+    position: absolute;
+    gap: 20%; /* Reducimos el espacio entre los elementos */
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+p {
+    align-self: center;
+}
+
+.link {
+    font-weight: bold;
+    font-size: 1.5vw; /* Usamos vw para el tamaño del texto */
+}
+
+/* Media query para pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Cambiamos la dirección a columna para pantallas pequeñas */
+        margin-left: 0; /* Eliminamos el margen izquierdo en pantallas pequeñas */
+        padding-left: 0; /* Eliminamos el padding izquierdo en pantallas pequeñas */
+        text-align: center; /* Centramos el texto en pantallas pequeñas */
+        gap: 5%; /* Reducimos el espacio entre los elementos */
+    }
+
+    .link {
+        font-size: 3vw; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+        margin-top: 10px; /* Agregamos un margen superior para separar los elementos */
+    }
+}
+

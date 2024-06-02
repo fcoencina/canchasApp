@@ -1,0 +1,52 @@
+
+.body {
+    font-family: Arial, sans-serif;
+    color: black;
+    position: relative;
+    min-height: 100vh; /* Ajustamos la altura mínima para que cubra toda la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
+    background-image: url('../assets/images/USM.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.element {
+    align-self: center;
+}
+
+.button {
+    width: 150px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #08407b;
+    color: white;
+    text-align: center;
+}
