@@ -8,6 +8,9 @@ require("dotenv").config({ path: "./config.env" });
 //connection
 const {testConnection, syncDatabase} = require("./bd/db");
 
+//associations
+require("./bd/associations");
+
 app.use(cors());
 app.use(express.json());
 

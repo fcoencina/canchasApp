@@ -5,11 +5,17 @@ const bcrypt = require('bcrypt');
 const {createUser} = require("../controllers/userController");
 
 router.post("/signup", async (req, res) => {
-    const {username, password} = req.body;
+    const password = req.body.password;
 
     try {
         const bcryptPassword = await bcrypt.hash(password, 10);
-        const user = await createUser(username, bcryptPassword);
+        const userAttributes = {
+            username: req.body.username,
+            password: bcryptPassword,
+            email: req.body.email,
+            profile: req.body.profile,
+        }
+        const user = await createUser(userAttributes);
 
         if (!user) {
             return res.statusCode(500).json({message: "No se pudo registrar el usuario"});

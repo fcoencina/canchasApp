@@ -15,7 +15,8 @@ const Login = () => {
 
   const [form, setForm] = useState({
     "username": "",
-    "password": ""
+    "password": "",
+    "profile": userType
   });
 
   const [error, setError] = useState("");

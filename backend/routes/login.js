@@ -8,12 +8,16 @@ const {getUserByUsername} = require("../controllers/userController");
 
 // Ruta de inicio de sesión
 router.post('/login', async (req, res) => {
-  const { username, password } = req.body;
+  const { username, password, profile} = req.body;
 
   try {
     const user = await getUserByUsername(username);
 
     if (!user) {
+      return res.status(401).json({ message: 'Credenciales incorrectas' });
+    }
+
+    if (user.profile != profile) {
       return res.status(401).json({ message: 'Credenciales incorrectas' });
     }
 

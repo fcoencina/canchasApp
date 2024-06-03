@@ -12,8 +12,10 @@ POST http://localhost:9000/signup HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "Nicolas",
-    "password": "1234"
+    "username": "Christian",
+    "password": "1234",
+    "email": "christian.riquelme@usm.cl",
+    "profile": "admin"
 }
 
 

@@ -1,13 +1,10 @@
 
 const User = require("../models/User");
 
-async function createUser(_username, _password) {
+async function createUser(userAttributes) {
     try {
         //create retorna el registro si se pudo crear.
-        const user = await User.create({
-            username: _username,
-            password: _password
-        });
+        const user = await User.create(userAttributes);
 
         return user;
     } catch (error) {
@@ -15,14 +12,11 @@ async function createUser(_username, _password) {
     }
 }
 
-async function updateUser(_id, _username, _password) {
+async function updateUser(_id, userAttributes) {
     try {
         //update retorna 0 si no encuentra
         const tryUpdate = await User.update(
-            {
-                username: _username,
-                password: _password
-            },
+            userAttributes,
             {
                 where: {
                     id: _id
