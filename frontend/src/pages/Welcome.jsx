@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import styles from '../styles/Welcome.module.css';
@@ -13,10 +12,10 @@ function Welcome() {
         </div>
         <div className={styles.formContainer}>
           <h1 className={styles.title}>Acceso</h1>
-          <Link to="/login">
+          <Link to="/login/student">
             <button className={styles.button}>Estudiantes</button>
           </Link>
-          <Link to="/login">
+          <Link to="/login/admin">
             <button className={styles.button}>Administración</button>
           </Link>
         </div>

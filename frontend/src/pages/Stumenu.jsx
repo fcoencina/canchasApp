@@ -1,5 +1,4 @@
 
-import React from 'react';
 import Navstu from '../components/Navstu';
 import Reservacard from '../components/Reservacard';
 import Styles from '../styles/Stumenu.module.css';

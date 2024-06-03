@@ -1,5 +1,4 @@
 
-import React from 'react';
 import Styles from '../styles/Reservacard.module.css';
 import Image from '../assets/images/tiburon.jpeg';
 

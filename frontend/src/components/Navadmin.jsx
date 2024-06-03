@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Styles from '../styles/Navstu.module.css';
 
@@ -24,7 +23,7 @@ function Navadmin() {
                     </NavLink>
                 </li>
                 <li className={Styles.li}>
-                    <NavLink className={Styles.a} to="/">
+                    <NavLink className={Styles.a} to="/logoutadmin">
                         Log Out
                     </NavLink>
                 </li>
