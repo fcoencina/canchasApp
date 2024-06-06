@@ -14,3 +14,34 @@
     font-weight: bold;
     font-size: 20px;
 }
+
+.horario {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20%;
+    left: 5%;
+  }
+
+.tabla {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+.cabecera, .celda {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.cabecera {
+    background-color: #f2f2f2;
+}
+
+.celdaSeleccionada {
+    background-color: #4caf50;
+    color: white;
+}
+
