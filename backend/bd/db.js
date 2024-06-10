@@ -2,7 +2,7 @@
 const { Sequelize } = require('sequelize');
 
 // Configura la conexión a la base de datos
-const sequelize = new Sequelize('canchasApp', 'fcoencina', '1015', {
+const sequelize = new Sequelize('canchasApp', 'root', '', {
   host: 'localhost',
   dialect: 'mysql',
 });

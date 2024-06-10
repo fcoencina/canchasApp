@@ -17,6 +17,7 @@ app.use(express.json());
 // routes
 app.use(require("./routes/login"));
 app.use(require("./routes/signUp"));
+app.use(require("./routes/user"));
 
 const PORT = process.env.PORT || 5000;
 

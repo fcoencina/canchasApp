@@ -45,6 +45,23 @@ async function getUserByUsername(_username) {
     }
 }
 
+async function getUserById(_id) {
+    try {
+        //findOne retorna null si no encuentra
+        const user = await User.findOne({
+            where: {
+                id: _id,
+            }
+        });
+        // Retornar el usuario
+        return user;
+    } catch (error) {
+        return error;
+    }
+}
+
+
+
 async function deleteUser(_id) {
     try {
         //destroy retorna 0 si no encuentra
@@ -76,6 +93,7 @@ module.exports = {
     createUser,
     updateUser,
     getUserByUsername,
+    getUserById,
     deleteUser,
     getUsers
 }

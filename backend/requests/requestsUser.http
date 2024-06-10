@@ -1,0 +1,53 @@
+
+POST http://localhost:9000/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "Franzisko",
+    "password": "myPass"
+}
+###
+
+POST http://localhost:9000/signup HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "fernando",
+    "password": "1234",
+    "email": "fernando.carrasco@usm.cl",
+    "profile": "student"
+}
+###
+
+PATCH  http://localhost:9000/updateuser HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "username": "Chris",
+    "password": "12345",
+    "email": "chris.riquelme@usm.cl"
+}
+
+###
+
+DELETE http://localhost:9000/deleteuser HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 2,
+    "username": "fernando",
+    "password": "1234",
+    "email": "fernando.carrasco@usm.cl"
+}
+
+###
+
+GET http://localhost:9000/getuser HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1
+}
+
+
