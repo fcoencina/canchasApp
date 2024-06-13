@@ -16,6 +16,7 @@ Content-Type: application/json
     "password": "1234",
     "email": "fernando.carrasco@usm.cl",
     "profile": "student"
+    
 }
 ###
 

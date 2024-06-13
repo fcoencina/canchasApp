@@ -1,22 +1,22 @@
 
-const Instalacion = require('../models/Instalacion');
+const Reserva = require("../models/Reserva");
 
-async function createInstalacion(instalacionAttributes) {
+async function createReserva(reservaAttributes) {
     try {
         //create retorna el registro si se pudo crear.
-        const instalacion = await Instalacion.create(instalacionAttributes);
+        const reserva = await Reserva.create(reservaAttributes);
 
-        return instalacion;
+        return reserva;
     } catch (error) {
         return error;
     }
 }
 
-async function updateInstalacion(_id, instalacionAttributes) {
+async function updateReserva(_id, reservaAttributes) {
     try {
         //update retorna 0 si no encuentra
-        const tryUpdate = await Instalacion.update(
-            instalacionAttributes,
+        const tryUpdate = await Reserva.update(
+            reservaAttributes,
             {
                 where: {
                     id: _id
@@ -30,25 +30,25 @@ async function updateInstalacion(_id, instalacionAttributes) {
     }
 }
 
-async function getInstalacionById(_id) {
+async function getReservaById(_id) {
     try {
         //findOne retorna null si no encuentra
-        const instalacion = await Instalacion.findOne({
+        const Reserva = await Reserva.findOne({
             where: {
                 id: _id,
             }
         });
-        // Retornar la instalacion 
-        return instalacion;
+        // Retornar el usuario
+        return Reserva;
     } catch (error) {
         return error;
     }
 }
 
-async function deleteInstalacion(_id) {
+async function deleteReserva(_id) {
     try {
         //destroy retorna 0 si no encuentra
-        const tryDelete = await Instalacion.destroy({
+        const tryDelete = await Reserva.destroy({
             where: {
                 id: _id
             }
@@ -60,22 +60,23 @@ async function deleteInstalacion(_id) {
     }
 }
 
-async function getInstalaciones() {
+async function getReservas() {
     try {
         //findAll retorna null si no encuentra
-        const instalaciones = await Instalacion.findAll();
+        const Reservas = await Reserva.findAll();
 
         // Retornar los usuarios
-        return instalaciones;
+        return Reservas;
     } catch (error) {
         return error;
     }
 }
 
+
 module.exports = {
-    createInstalacion,
-    updateInstalacion,
-    getInstalacionById,
-    deleteInstalacion,
-    getInstalaciones
+    createReserva,
+    updateReserva,
+    getReservaById,
+    deleteReserva,
+    getReservas
 }
