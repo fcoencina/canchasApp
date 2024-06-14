@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
     const token = jwt.sign({ userId: user.id }, process.env.SECRET, { expiresIn: '1h' });
 
     // Devolver el token al cliente
-    res.json({ token });
+    res.json({ token, user });
   } catch (error) {
     return res.status(500).json({ message: 'Error interno del servidor' });
   }

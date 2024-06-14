@@ -1,5 +1,4 @@
 
-import React from 'react';
 import Navstu from '../components/Navstu';
 import Styles from '../styles/Historial.module.css';
 
