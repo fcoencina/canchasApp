@@ -1,5 +1,7 @@
 
 const Reserva = require("../models/Reserva");
+const Instalacion = require('../models/Instalacion');
+const User = require("../models/User");
 
 async function createReserva(reservaAttributes) {
     try {
@@ -37,7 +39,8 @@ async function getReservaById(_id) {
         const Reserva = await Reserva.findOne({
             where: {
                 id: _id,
-            }
+            },
+            include: [User, Instalacion]
         });
         // Retornar el usuario
         return Reserva;
@@ -64,10 +67,28 @@ async function deleteReserva(_id) {
 async function getReservas() {
     try {
         //findAll retorna null si no encuentra
-        const Reservas = await Reserva.findAll();
+        const Reservas = await Reserva.findAll({
+            include: [User, Instalacion]
+        });
 
         // Retornar los usuarios
         return Reservas;
+    } catch (error) {
+        return error;
+    }
+}
+
+async function getReservaByfecha(_fecha) {
+    try {
+        //findOne retorna null si no encuentra
+        const Reservas = await Reserva.findAll({
+            where: {
+                fecha: _fecha,
+            },
+            include: [User, Instalacion]
+        });
+        // Retornar el usuario
+        return Reserva;
     } catch (error) {
         return error;
     }
@@ -79,5 +100,6 @@ module.exports = {
     updateReserva,
     getReservaById,
     deleteReserva,
-    getReservas
+    getReservas,
+    getReservaByfecha
 }

@@ -9,29 +9,37 @@ Content-Type: application/json
     "disponibilidad": "disponible"
 }
 
+###
+
 PATCH  http://localhost:9000/updateinstalacion HTTP/1.1
 Content-Type: application/json
 
 {
     "id": 1,
-    "tipo": "Chris",
-    "password": "12345",
-    "email": "chris.riquelme@usm.cl"
+    "tipo": "futbol1",
+    "ubicacion": "costado sansanito",
+    "fotografia": "1.jpg",
+    "disponibilidad": "reservada"
 }
+
+###
 
 DELETE http://localhost:9000/deleteinstalacion HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": 2,
-    "tipo": "fernando",
-    "password": "1234",
-    "email": "fernando.carrasco@usm.cl"
+    "id": 1,
+    "tipo": "futbol1",
+    "ubicacion": "costado sansanito",
+    "fotografia": "1.jpg",
+    "disponibilidad": "reservada"
 }
+
+###
 
 GET http://localhost:9000/getinstalacion HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": 1
+    "id": 2
 }
