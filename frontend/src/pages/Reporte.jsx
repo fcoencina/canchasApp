@@ -1,5 +1,4 @@
 
-import React from 'react';
 import Navadmin from '../components/Navadmin';
 import Styles from '../styles/Reporte.module.css';
 

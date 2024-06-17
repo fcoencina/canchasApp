@@ -7,10 +7,61 @@
     background-color: white;
 }
 
-.p {
+.img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 10%;
-    left: 5%;
-    font-weight: bold;
-    font-size: 20px;
+    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
+    background-image: url('../assets/images/pool.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    gap: 20px;
+}
+
+.field {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.input {
+    width: 90%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.button {
+    padding: 10px;
+    background-color: #0f6dd1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #0a437f;
+}
+

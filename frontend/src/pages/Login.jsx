@@ -48,11 +48,11 @@ const Login = () => {
         localStorage.setItem('token', data.token);
 
         if (userType === "student") {
-          login(userType);
+          login(userType, data.user.id, form.username);
           navigate("/stumenu");
         }
         else{
-          login(userType);
+          login(userType, data.user.id, form.username);
           navigate("/adminmenu");
         }
       }
