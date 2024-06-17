@@ -3,8 +3,10 @@ POST http://localhost:9000/createinstalacion HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "Franzisko",
-    "password": "myPass"
+    "tipo": "futbol1",
+    "ubicacion": "costado sansanito",
+    "fotografia": "1.jpg",
+    "disponibilidad": "disponible"
 }
 
 PATCH  http://localhost:9000/updateinstalacion HTTP/1.1
@@ -12,7 +14,7 @@ Content-Type: application/json
 
 {
     "id": 1,
-    "username": "Chris",
+    "tipo": "Chris",
     "password": "12345",
     "email": "chris.riquelme@usm.cl"
 }
@@ -22,7 +24,7 @@ Content-Type: application/json
 
 {
     "id": 2,
-    "username": "fernando",
+    "tipo": "fernando",
     "password": "1234",
     "email": "fernando.carrasco@usm.cl"
 }
