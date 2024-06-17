@@ -69,7 +69,7 @@ router.delete("/deleteinstalacion", async (req, res) => {
 
 });
 
-router.get("/getuser", async (req, res) => {
+router.get("/getinstalacion", async (req, res) => {
 
     try {
         

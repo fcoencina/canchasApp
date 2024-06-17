@@ -19,6 +19,7 @@ async function updateReserva(_id, reservaAttributes) {
             reservaAttributes,
             {
                 where: {
+                    
                     id: _id
                 }
             }
