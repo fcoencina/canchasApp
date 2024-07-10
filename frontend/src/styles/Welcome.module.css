@@ -3,11 +3,12 @@
   font-family: Arial, sans-serif;
   color: white;
   position: relative;
-  min-height: 100vh; /* Ajustamos la altura mínima para que cubra toda la pantalla */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .img {
@@ -16,18 +17,19 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 0%;
-  bottom: 0%;
-  right: 0%;
-  left: 0%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   background-image: url('../assets/images/fondo.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .acronimoWrapper {
   text-align: center;
-  margin-bottom: 50px; /* Agregamos un margen inferior para separar el contenido del footer */
+  margin-bottom: 50px;
 }
 
 .acronimo {
@@ -45,6 +47,12 @@
   border-radius: 10px;
   gap: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.formContainer-fade-in-active {
+  opacity: 1;
 }
 
 .button {
@@ -56,6 +64,11 @@
   background-color: #08407b;
   color: white;
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.1);
 }
 
 .title {
@@ -72,5 +85,31 @@
     width: 120px;
     padding: 10px;
     font-size: 14px;
+  }
+
+  .formContainer {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .acronimoWrapper {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .acronimo {
+    font-size: 8vw;
+  }
+
+  .button {
+    width: 100px;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .formContainer {
+    width: 90%;
+    padding: 10px;
   }
 }

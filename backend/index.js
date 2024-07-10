@@ -18,7 +18,8 @@ app.use(express.json());
 app.use(require("./routes/login"));
 app.use(require("./routes/signUp"));
 app.use(require("./routes/user"));
-app.use(require("./routes/instalacion"))
+app.use(require("./routes/instalacion"));
+app.use(require("./routes/reservas"));
 
 const PORT = process.env.PORT || 5000;
 

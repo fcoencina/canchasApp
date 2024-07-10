@@ -1,17 +1,22 @@
 
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import styles from '../styles/Login.module.css'; // Importa las clases CSS Modules
+import Styles from '../styles/Login.module.css'; // Importa las clases CSS Modules
 //contexts
-import {useAuthContext} from '../contexts/AuthContext';
+import { useAuthContext } from '../contexts/AuthContext';
 
 
 const Login = () => {
+  const [isVisible, setIsVisible] = useState(false);
   const { userType } = useParams();
-  const {login} = useAuthContext();
+  const { login } = useAuthContext();
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const [form, setForm] = useState({
     "username": "",
@@ -51,29 +56,30 @@ const Login = () => {
           login(userType, data.user.id, form.username);
           navigate("/stumenu");
         }
-        else{
+        else {
           login(userType, data.user.id, form.username);
           navigate("/adminmenu");
         }
       }
     }
     catch (error) {
-        setError('Credenciales incorrectas');
-        console.error('Error:', error);
+      setError('Credenciales incorrectas');
+      console.error('Error:', error);
     }
   }
 
   return (
-    <div className={styles.body}>
-      <div className={styles.img}>
+    <div className={Styles.body}>
+      <div className={Styles.img}>
         <Header></Header>
-        <form onSubmit={OnSubmit} className={styles.form}>
-            <h1 className={styles.title}>Inicio Sesión</h1>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-          <div className={styles.element}>
+        <form onSubmit={OnSubmit} className={`${Styles['form']} ${isVisible ? Styles['form-fade-in-active'] : ''}`}>
+          <h1 className={Styles.title}>Inicio Sesión</h1>
+          {error && <p style={{ color: 'red' }}>{error}</p>}
+          <div className={Styles.element}>
             <label>Usuario</label>
             <br></br>
             <input
+              className={Styles.input}
               type="text"
               placeholder="Ingrese usuario"
               value={form.username}
@@ -81,10 +87,11 @@ const Login = () => {
               required
             />
           </div>
-          <div className={styles.element}>
+          <div className={Styles.element}>
             <label>Contraseña</label>
             <br></br>
             <input
+              className={Styles.input}
               type="password"
               placeholder="Contraseña"
               value={form.password}
@@ -92,8 +99,8 @@ const Login = () => {
               required
             />
           </div>
-          <div className={styles.element}>
-            <button className={styles.button}>Ingresar</button>
+          <div className={Styles.element}>
+            <button className={Styles.button}>Ingresar</button>
           </div>
         </form>
       </div>

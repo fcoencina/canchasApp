@@ -38,7 +38,7 @@ async function getInstalacionById(_id) {
                 id: _id,
             }
         });
-        // Retornar la instalacion 
+        // Retornar la instalacion
         return instalacion;
     } catch (error) {
         return error;
@@ -65,7 +65,7 @@ async function getInstalaciones() {
         //findAll retorna null si no encuentra
         const instalaciones = await Instalacion.findAll();
 
-        // Retornar los usuarios
+        // Retornar las instalaciones
         return instalaciones;
     } catch (error) {
         return error;
