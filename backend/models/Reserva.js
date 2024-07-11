@@ -9,6 +9,7 @@ const Reserva = sequelize.define('Reserva', {
         autoIncrement: true,
         allowNull: false
     },
+    instalacion: { type: DataTypes.STRING, allowNull: false},
     fecha: { type: DataTypes.STRING, allowNull: false},
     bloque: { type: DataTypes.STRING, allowNull: false},
     estado: { type: DataTypes.STRING, allowNull: false}

@@ -1,6 +1,6 @@
 
 import { NavLink } from 'react-router-dom';
-import Styles from '../styles/Navstu.module.css';
+import Styles from '../styles/Navadmin.module.css';
 
 function Navadmin() {
     return (

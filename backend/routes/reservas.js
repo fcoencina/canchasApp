@@ -21,7 +21,8 @@ router.post("/createreserva", async (req, res) =>{
             bloque: req.body.bloque,
             estado: req.body.estado,
             userId: req.body.userId,
-            instalacionId: req.body.instalacionId
+            instalacionId: req.body.instalacionId,
+            instalacion: req.body.instalacion
         }
 
         const reserva = await createReserva(reservaAttributes);
@@ -56,11 +57,11 @@ router.patch("/updatereserva", async (req, res) => {
     }
 });
 
-router.delete("/deletereserva", async (req, res) => {
+router.delete("/deletereserva/:id", async (req, res) => {
 
     try {
 
-        const reserva = await deleteReserva(req.body.id);
+        const reserva = await deleteReserva(req.params.id);
 
         if (!reserva) {
             return res.statusCode(500).json({message: "No se pudo eliminar la reserva"});
@@ -73,11 +74,11 @@ router.delete("/deletereserva", async (req, res) => {
 
 });
 
-router.get("/getreserva", async (req, res) => {
+router.get("/getreserva/:id", async (req, res) => {
 
     try {
-        console.log(req.body.id)
-        const reserva = await getReservaById(req.body.id);
+        console.log(req.params.id)
+        const reserva = await getReservaById(req.params.id);
 
 
         if (!reserva) {
@@ -109,11 +110,11 @@ router.get("/getreservas", async (req, res) => {
 
 });
 
-router.get("/getreservasbyuser", async (req, res) => {
+router.get("/getreservasbyuser/:userId", async (req, res) => {
 
     try {
 
-        const user = await getUserById(req.body.userId);
+        const user = await getUserById(req.params.userId);
         console.log(user);
 
         if (!user) {

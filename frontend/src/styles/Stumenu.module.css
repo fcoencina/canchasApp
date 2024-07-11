@@ -4,7 +4,7 @@
     flex-direction: column;
     position: relative;
     min-height: 100vh;
-    background-color: rgba(125, 243, 78, 0.947);
+    background-color: white;
 }
 
 .p {

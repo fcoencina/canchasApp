@@ -12,7 +12,7 @@ const Instalacion = sequelize.define('Instalacion', {
     name: { type: DataTypes.STRING, allowNull: false },
     tipo: { type: DataTypes.STRING, allowNull: false },
     ubicacion: { type: DataTypes.STRING, allowNull: false },
-    fotografia: { type: DataTypes.STRING, allowNull: false},
+    fotografia: { type: DataTypes.STRING, allowNull: true},
     disponibilidad: { type: DataTypes.STRING, allowNull: false}
   }/*, {
     tableName: 'usuarios' // Nombre personalizado de la tabla

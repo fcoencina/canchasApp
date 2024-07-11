@@ -54,11 +54,11 @@ router.patch("/updateinstalacion", async (req, res) => {
     }
 });
 
-router.delete("/deleteinstalacion", async (req, res) => {
+router.delete("/deleteinstalacion/:id", async (req, res) => {
 
     try {
 
-        const instalacion = await deleteInstalacion(req.body.id);
+        const instalacion = await deleteInstalacion(req.params.id);
 
         if (!instalacion) {
             return res.statusCode(500).json({message: "No se pudo eliminar la instalacion"});

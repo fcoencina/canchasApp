@@ -4,7 +4,7 @@
     flex-direction: column;
     position: relative;
     min-height: 100vh;
-    background-color: rgb(250, 226, 16);
+    background-color: white;
 }
 
 .article {
@@ -143,3 +143,6 @@
     margin-left: 2%;
 }
 
+.button:hover {
+    background-color: #560f94;
+}
